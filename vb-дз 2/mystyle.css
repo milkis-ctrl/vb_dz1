@@ -1,0 +1,42 @@
+body {
+    font-family: Arial;
+    text-align: center; 
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+}
+
+button {
+    height: 35px;
+    background-color: green;
+    color: white;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none; 
+    padding: 0;
+    width: 300px;
+    margin: auto; 
+}
+
+li {
+    background-color: lightgray; 
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    margin-left: 10px;
+}
+
+#empty-message {
+    color: gray;
+    font-size: 18px;
+}
