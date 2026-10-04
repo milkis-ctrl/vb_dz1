@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на комнату в общежитии</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Заявка на комнату в общежитии</h1>
+
+    <form id="request-form">
+      <label>ID студента
+        <input type="number" id="student-id" min="1" required>
+      </label>
+      <label>Номер корпуса
+        <input type="number" id="building-number" min="1" required>
+      </label>
+      <label>Номер комнаты
+        <input type="number" id="room-number" min="1" required>
+      </label>
+      <button type="submit">Проверить заявку</button>
+    </form>
+
+    <div id="result" role="status"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

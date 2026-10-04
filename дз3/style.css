@@ -1,0 +1,89 @@
+:root {
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --text: #1c2630;
+  --muted: #6b7885;
+  --accent: #1b6ef3;
+  --line: #dde3ea;
+  --ok: #2e7d32;
+  --fail: #c62828;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+label { display: grid; gap: 4px; font-size: 14px; color: var(--muted); }
+
+input {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+}
+input:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  font: inherit;
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.6; cursor: wait; }
+
+#result { margin-top: 20px; }
+
+.verdict {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #fff;
+}
+.verdict.ok { background: var(--ok); }
+.verdict.fail { background: var(--fail); }
+
+.checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.checks li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.checks li.pass { border-left-color: var(--ok); }
+.checks li.fail { border-left-color: var(--fail); }
