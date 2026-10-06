@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на комнату в общежитии</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Заявка на комнату в общежитии</h1>
+
+    <form id="request-form" novalidate>
+      <label class="field">
+        <span>ID студента</span>
+        <input type="number" id="student-id" min="1" required placeholder="Например: 1">
+      </label>
+
+      <label class="field">
+        <span>Номер корпуса</span>
+        <input type="number" id="building-number" min="1" required placeholder="Например: 2">
+      </label>
+
+      <label class="field">
+        <span>Номер комнаты</span>
+        <input type="number" id="room-number" min="1" required placeholder="Например: 101">
+      </label>
+
+      <button type="submit" id="submit-btn">Проверить заявку</button>
+    </form>
+
+    <p id="form-error" class="form-error" role="alert"></p>
+
+    <section id="result" class="result" hidden>
+      <ul id="checks" class="checks"></ul>
+      <div id="verdict" class="verdict"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
