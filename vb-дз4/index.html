@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доска объявлений</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Доска объявлений</h1>
+  </header>
+
+  <main class="container">
+    <!-- Форма подачи объявления (POST /ads) -->
+    <section class="panel">
+      <h2>Подать объявление</h2>
+      <form id="ad-form" novalidate>
+        <label class="field">
+          <span>Заголовок</span>
+          <input type="text" name="title" id="title" maxlength="100" required placeholder="Например: Продаю ноутбук">
+        </label>
+
+        <label class="field">
+          <span>Описание</span>
+          <textarea name="description" id="description" rows="4" required placeholder="Состояние, комплектация, детали"></textarea>
+        </label>
+
+        <label class="field">
+          <span>Цена</span>
+          <input type="number" name="price" id="price" min="0" step="0.01" required placeholder="30000">
+        </label>
+
+        <label class="field">
+          <span>Изображение</span>
+          <input type="file" name="image" id="image" accept="image/*" required>
+        </label>
+
+        <img id="preview" class="preview" alt="Предпросмотр" hidden>
+
+        <button type="submit" id="submit-btn" class="btn">Отправить</button>
+        <p id="form-message" class="message" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Список объявлений (GET /ads) -->
+    <section class="panel">
+      <div class="list-head">
+        <h2>Объявления <span id="total" class="badge"></span></h2>
+        <button type="button" id="refresh-btn" class="btn btn-secondary">Обновить</button>
+      </div>
+
+      <p id="list-status" class="message" role="status"></p>
+      <div id="ads" class="ads"></div>
+
+      <nav class="pagination" id="pagination" hidden>
+        <button type="button" id="prev-btn" class="btn btn-secondary">← Назад</button>
+        <span id="page-info"></span>
+        <button type="button" id="next-btn" class="btn btn-secondary">Вперёд →</button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
